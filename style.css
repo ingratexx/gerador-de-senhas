@@ -1,0 +1,51 @@
+@import url('https://fonts.cdnfonts.com/css/thegoodmonolith');
+
+body {
+    background-image: url(code.gif);
+    background-repeat: repeat-x repeat-y;
+    background-size: 400px;
+    font-family: 'TheGoodMonolith', sans-serif;
+    color: white;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+.gerador {
+    background-color: black;
+    height: 400px;
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 4px;
+    padding: 20px;
+    margin: 250px 600 250 600;
+}
+
+.box {
+    margin: 30 30 30 30;
+    display: flex;
+    flex-direction: column; 
+    justify-content: center;
+    align-items: center;
+}
+
+#btn {
+    margin: 2em;
+    height: 30px;
+    width: 80px;
+    font-family: 'TheGoodMonolith', sans-serif;
+    font-size: medium;
+}
+
+.dificuldade{
+    scale: 1.2;
+    cursor: pointer;
+}
+
+#senha-gerada {
+    height: 50px;
+    width: 80%;
+}
