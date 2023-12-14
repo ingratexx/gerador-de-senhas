@@ -17,24 +17,24 @@
             Gerador de senhas
         </header>
 
-        <p style="font-size: large;">Escolha as caracteristicas a serem geradas</p>
+        <p style="font-size: large;">Escolha a difuldade da senha</p>
 
         <form action="" class="box">
 
             <article class="dificuldade">
-                <input type="radio" id="" value="6" name="easyPassword">
+                <input type="radio" id="easyPassword" maxlength="8" value="8" name="easyPassword">
                 <label for="">fácil</label>
 
-                <input type="radio" id="" value="10" name="intermediaryPassword">
+                <input type="radio" id="intermediaryPassword" value="12" maxlength="12" name="intermediaryPassword">
                 <label for="">intermediario</label>
 
-                <input type="radio" id="" value="16" name="hardPassword">
+                <input type="radio" id="hardPassword" value="16" name="hardPassword" maxlength="16">
                 <label for="">dificil</label>
             </article>
 
             <input type="button" value="gerar" id="btn">
 
-            <input type="text" id="senha-gerada" readonly="0">
+            <input type="text" id="senhaGerada" readonly="0">
         </form>
 
     </div>

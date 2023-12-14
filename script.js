@@ -1,14 +1,38 @@
 function getPassword(){
        
-    var letras = "qwertyuiopasdfghjklçzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM";
-    var numeros = "1234567890";
-    var caracteres = "!@#$%¨&*()_+`{^}>:?<=-[ç~].;/,";
-    var easyPassword = 8;
-    var intermediaryPassword = 10;
-    var hardPassword = 16;
+    var chars = "qwertyuiopasdfghjklçzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM!@#$%¨&*()_+`{^}>:?<=-[ç~]1234567890.;/,";
+    var passwordLengths = {
+        easyPassword : 8,
+        intermediaryPassword : 12,
+        hardPassword : 16
 
-    document.querySelectorAll('input type="radio"'). forEach(function(radio) {
-        radio.addEventListener('click', function() )
-    })
+    };
+
+    var select = document.getElementById('dificuldade');
+    var senhaGerada = document.getElementById("senhaGerada");
+
+    select.addEventListener("change", setWeather);
+
+    function setWeather () {
+        var choice = select.value;
+        var password = generatePassword(passwordLengths[choice]);
+        senhaGerada.value + password;
+    }
+
+
+    function generatePassword(length) {
+        var generatePassword = "";
+        for (var i = 0; i < length; i++) {
+            var randomNumber = Math.floor(Math.random() * chars.length);
+            generatePassword += chars.substring(randomNumber, randomNumber + 1);
+        }
+
+        return generatePassword
+    }
+
 
 }
+
+getPassword();
+
+    
