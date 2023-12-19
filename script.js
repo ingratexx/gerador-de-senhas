@@ -1,38 +1,47 @@
-function getPassword(){
-       
-    var chars = "qwertyuiopasdfghjklçzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM!@#$%¨&*()_+`{^}>:?<=-[ç~]1234567890.;/,";
-    var passwordLengths = {
-        easyPassword : 8,
-        intermediaryPassword : 12,
-        hardPassword : 16
+function generatePassword() {
+  var lowercaseChars = "qwertyuiopasdfghjklçzxcvbnm";
+  var uppercaseChars = "QWERTYUIOPASDFGHJKLZXCVBNM";
+  var specialChars = "!@#$%¨&*()_+`{^}>:?<=-[ç~]";
+  var numberChars = "1234567890";
 
-    };
+  var passwordLengths = {
+    easyPassword: 8,
+    intermediaryPassword: 12,
+    hardPassword: 16,
+  };
 
-    var select = document.getElementById('dificuldade');
-    var senhaGerada = document.getElementById("senhaGerada");
+  var password = "";
+  var senhaGerada = "";
 
-    select.addEventListener("change", setWeather);
+  var easyPassword = document.getElementById("easyPassword");
+  var intermediaryPassword = document.getElementById("intermediaryPassword");
+  var hardPassword = document.getElementById("hardPassword");
 
-    function setWeather () {
-        var choice = select.value;
-        var password = generatePassword(passwordLengths[choice]);
-        senhaGerada.value + password;
-    }
+  var allChars = "";
 
+  if (easyPassword.checked === true) {
+    allChars = lowercaseChars + uppercaseChars + numberChars + specialChars;
+    password = generateRandomPassword(allChars, passwordLengths.easyPassword);
+  } else if (intermediaryPassword.checked === true) {
+    allChars = lowercaseChars + uppercaseChars + numberChars + specialChars;
+    password = generateRandomPassword(allChars, passwordLengths.intermediaryPassword);
+  } else if (hardPassword.checked === true) {
+    allChars = lowercaseChars + uppercaseChars + numberChars + specialChars;
+    password = generateRandomPassword(allChars, passwordLengths.hardPassword);
+  } else {
+    allChars = lowercaseChars + uppercaseChars + numberChars;
+    password = generateRandomPassword(allChars, passwordLengths.easyPassword);
+  }
 
-    function generatePassword(length) {
-        var generatePassword = "";
-        for (var i = 0; i < length; i++) {
-            var randomNumber = Math.floor(Math.random() * chars.length);
-            generatePassword += chars.substring(randomNumber, randomNumber + 1);
-        }
-
-        return generatePassword
-    }
-
-
+  var senhaGeradaInput = document.getElementById("senhaGerada");
+  senhaGeradaInput.value = password;
 }
 
-getPassword();
-
-    
+function generateRandomPassword(chars, length) {
+  var password = '';
+  for (var i = 0; i < length; i++) {
+    var randomIndex = Math.floor(Math.random() * chars.length);
+    password += chars[randomIndex];
+  }
+  return password;
+}

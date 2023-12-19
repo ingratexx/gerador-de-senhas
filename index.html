@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Teste</title>
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
 </head>
 
 <body>
@@ -13,7 +12,7 @@
 
     <div class="gerador">
 
-        <header style="margin: 2rem; font-size: x-large;">
+        <header>
             Gerador de senhas
         </header>
 
@@ -21,23 +20,25 @@
 
         <form action="" class="box">
 
-            <article class="dificuldade">
-                <input type="radio" id="easyPassword" maxlength="8" value="8" name="easyPassword">
-                <label for="">fácil</label>
+            <div class="dificuldade">
+                <input type="checkbox" id="easyPassword" maxlength="8" value="8" name="easyPassword">
+                <label>fácil</label>
 
-                <input type="radio" id="intermediaryPassword" value="12" maxlength="12" name="intermediaryPassword">
-                <label for="">intermediario</label>
+                <input type="checkbox" id="intermediaryPassword" value="12" maxlength="12" name="intermediaryPassword">
+                <label>intermediario</label>
 
-                <input type="radio" id="hardPassword" value="16" name="hardPassword" maxlength="16">
-                <label for="">dificil</label>
-            </article>
+                <input type="checkbox" id="hardPassword" value="16" name="hardPassword" maxlength="16">
+                <label>dificil</label>
+            </div>
 
-            <input type="button" value="gerar" id="btn">
+            <input type="button" value="gerar" id="btn" onclick="generatePassword()">
 
-            <input type="text" id="senhaGerada" readonly="0">
+            <input type="text" id="senhaGerada">
         </form>
 
     </div>
+
+    <script src="script.js"></script>
 </body>
 
 </html>

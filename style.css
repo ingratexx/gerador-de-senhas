@@ -12,6 +12,10 @@ body {
 }
 
 
+header{
+    margin: 2rem; font-size: x-large;
+}
+
 .gerador {
     background-color: black;
     height: 400px;
